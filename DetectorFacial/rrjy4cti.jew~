@@ -1,0 +1,51 @@
+﻿using System;
+using Emgu.CV;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Emgu.CV.Structure;
+
+namespace DetectorFacial
+{
+    public partial class Form1 : Form
+    {
+        // Variáveis:
+        HaarCascade FaceDetectada;
+
+        Image<Bgr, Byte> frame;
+        Image <Gray, byte> result;
+        Image <Gray, byte> FaceTreinada;
+        Image <Gray, byte> FaceCinza;
+
+        List<Image<Gray, byte>> treinandoFace = new List<Image<Gray, byte>>();
+        List<string> marcador = new List<string>();
+        List<string> usuario = new List<string>();
+
+        Capture camera;
+
+        int Contador, numMarcadores, t;
+        string nome, nomes = null;
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            // "HaarCascade" é para detecção de faces.
+            FaceDetectada = new HaarCascade("haarcascade_frontalface_default.xml");
+
+            try {
+
+            }catch()
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
